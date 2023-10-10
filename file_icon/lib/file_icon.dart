@@ -5,12 +5,14 @@ class FileIcon extends StatelessWidget {
   final String fileName;
   final double size;
 
-  FileIcon(String fileName, {this.size})
-      : this.fileName = fileName.toLowerCase();
+  FileIcon(
+    String fileName, {
+    required this.size,
+  }) : this.fileName = fileName.toLowerCase();
 
   @override
   Widget build(BuildContext context) {
-    String key;
+    String? key;
 
     if (iconSetMap.containsKey(fileName)) {
       key = fileName;
@@ -32,11 +34,11 @@ class FileIcon extends StatelessWidget {
 
     return Icon(
       IconData(
-        iconSetMap[key].codePoint,
+        iconSetMap[key]!.codePoint,
         fontFamily: 'Seti',
         fontPackage: 'file_icon',
       ),
-      color: Color(iconSetMap[key].color),
+      color: Color(iconSetMap[key]!.color),
       size: size,
     );
   }

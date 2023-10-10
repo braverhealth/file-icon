@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           InkWell(
             child: FileIcon('.html', size: 32),
             onTap: () {
-              launch('https://github.com/pd4d10/file-icon');
+              launchUrl(Uri.parse('https://github.com/pd4d10/file-icon'));
             },
           )
         ],
