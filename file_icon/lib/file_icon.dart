@@ -4,10 +4,12 @@ import 'src/data.dart';
 class FileIcon extends StatelessWidget {
   final String fileName;
   final double size;
+  final Color? color;
 
   FileIcon(
     String fileName, {
     required this.size,
+    this.color,
   }) : this.fileName = fileName.toLowerCase();
 
   @override
@@ -38,7 +40,7 @@ class FileIcon extends StatelessWidget {
         fontFamily: 'Seti',
         fontPackage: 'file_icon',
       ),
-      color: Color(iconSetMap[key]!.color),
+      color: color ?? Color(iconSetMap[key]!.color),
       size: size,
     );
   }
